@@ -38,4 +38,4 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: nextjs-build
-          path: .next # The output directory for Next.js builds
+          path: .next/** # Include all file and folder in the output directory for Next.js builds
