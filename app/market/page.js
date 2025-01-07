@@ -156,7 +156,7 @@ export default function Market() {
           {/* Emoji Input Section */}
           <div className="bg-black border border-blue-500 p-4 rounded-lg">
             <div className="grid grid-cols-10 gap-2">
-              {Array.from({ length: 100 }).map((_, i) => (
+              {Array.from({ length: 80 }).map((_, i) => (
                 <div
                   key={i}
                   className="w-8 h-8 bg-blue-500 text-black flex items-center justify-center cursor-pointer hover:bg-blue-400"
