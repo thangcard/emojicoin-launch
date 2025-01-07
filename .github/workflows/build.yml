@@ -2,37 +2,37 @@ name: Build Next.js App
 
 on:
   push:
-    branches: [ "main" ]
+    branches: ["main"]
   pull_request:
-    branches: [ "main" ]
+    branches: ["main"]
 
 jobs:
   build:
     runs-on: ubuntu-latest
 
     steps:
-    # 1. Checkout repository
-    - name: Checkout code
-      uses: actions/checkout@v4
+      # 1. Checkout repository
+      - name: Checkout code
+        uses: actions/checkout@v4
 
-    # 2. Set up Node.js
-    - name: Set up Node.js
-      uses: actions/setup-node@v4
-      with:
-        node-version: '18.x' # Use the Node.js version required by your app
+      # 2. Set up Node.js
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "18.x" # Use the Node.js version required by your app
 
-    # 3. Install dependencies
-    - name: Install dependencies
-      run: npm install
+      # 3. Install dependencies
+      - name: Install dependencies
+        run: npm install
 
-    # 4. Build the Next.js app
-    - name: Build Next.js app
-      run: npm run build
+      # 4. Build the Next.js app
+      - name: Build Next.js app
+        run: npm run build
 
-    # 5. Upload build output (Optional, if you want to store build artifacts)
-    - name: Upload artifacts
-      if: success()
-      uses: actions/upload-artifact@v3
-      with:
-        name: nextjs-build
-        path: .build # The output directory for Next.js builds
+      # 5. Upload build output (Optional, if you want to store build artifacts)
+      - name: Upload artifacts
+        if: success()
+        uses: actions/upload-artifact@v3
+        with:
+          name: nextjs-build
+          path: .next # The output directory for Next.js builds
