@@ -30,6 +30,9 @@ jobs:
         run: npm run build
 
       # 5. Upload build output (Optional, if you want to store build artifacts)
+      - name: Verify build output
+        run: ls -la .next
+
       - name: Upload artifacts
         if: success()
         uses: actions/upload-artifact@v3
